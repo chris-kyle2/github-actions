@@ -61,7 +61,7 @@ jobs:
                 name: dragon-text-file-job2
             - name: read dragon.txt from job2
               run: |
-                cat dragon-text-file-job2
+                cat dragon.txt
               shell: bash
             
 
