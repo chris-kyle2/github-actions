@@ -1,0 +1,42 @@
+name: Generate ASCII
+
+on:
+    push:
+        branches: 
+            - main
+jobs:
+    generate-ascii:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions@checkout@v4
+            - name: Install Cowsay Program
+              run: |
+                sudo apt-get update -y
+                sudo apt-get install cowsay -y
+            - name: run ascii-script.sh
+              run: |
+                chmod +x ascii-script.sh
+                ./ascii-script.sh
+              shell: bash
+    generate-ascii-2:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions@checkout@v4
+            - name: run ascii-script1.sh
+              run: |
+                chmod +x ascii-script1.sh
+                ./ascii-script1.sh
+              shell: bash
+    generate-ascii-3:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Code
+              uses: actions@checkout@v4
+            - name: run ascii-script2.sh
+              run: |
+                chmod +x ascii-script2.sh
+                ./ascii-script2.sh
+              shell: bash
+
