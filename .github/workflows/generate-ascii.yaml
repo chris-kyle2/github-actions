@@ -9,7 +9,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions@checkout@v4
+              uses: actions/checkout@v4
             - name: Install Cowsay Program
               run: |
                 sudo apt-get update -y
@@ -23,7 +23,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
-              uses: actions@checkout@v4
+              uses: actions/checkout@v4
             - name: run ascii-script1.sh
               run: |
                 chmod +x ascii-script1.sh
@@ -33,7 +33,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
-              uses: actions@checkout@v4
+              uses: actions/checkout@v4
             - name: run ascii-script2.sh
               run: |
                 chmod +x ascii-script2.sh
