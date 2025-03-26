@@ -20,6 +20,7 @@ jobs:
                 ./ascii-script.sh
               shell: bash
     generate-ascii-2:
+        needs: generate-ascii
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
@@ -30,6 +31,7 @@ jobs:
                 ./ascii-script1.sh
               shell: bash
     generate-ascii-3:
+        needs: generate-ascii-2
         runs-on: ubuntu-latest
         steps:
             - name: Checkout Code
