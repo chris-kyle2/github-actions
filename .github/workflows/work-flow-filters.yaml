@@ -1,0 +1,32 @@
+name: Work flow filters and activities
+
+on: 
+    push:
+        branches:
+            - main
+            - "!feature/*"
+        # branches_ignore:
+        #     - "feature/*"
+    pull_request:
+        types:
+            - opened
+            - synchronize
+            - closed
+            - reopened
+            - edited
+        branches:
+            - main
+        paths-ignore:
+            - "*.md"
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Print a message
+              run: |
+                echo "Hello, world!"
+                echo "Hii we are learning github actions"
+                ls -la
