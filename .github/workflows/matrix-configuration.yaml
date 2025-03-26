@@ -1,0 +1,26 @@
+name: Matrix Configuration
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    build:
+        strategy:
+            matrix:
+                os:
+                    - ubuntu-latest
+                    - ubuntu-22.04
+                   
+                images:
+                    - hello-world
+                    - nginx
+        runs-on: ${{ matrix.os }}
+        steps:
+            - name: Run the docker image ${{ matrix.images }}
+              run: |
+                docker run ${{ matrix.images }}
+              shell: bash
+        
