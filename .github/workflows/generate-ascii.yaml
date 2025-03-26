@@ -1,9 +1,11 @@
 name: Generate ASCII
 
 on:
-    push:
-        branches: 
-            - main
+  schedule:
+    - cron: '*/1 * * * *'
+    # push:
+    #     branches: 
+    #         - main
 jobs:
     generate-ascii:
         runs-on: ubuntu-latest
