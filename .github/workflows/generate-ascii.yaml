@@ -70,6 +70,7 @@ jobs:
                 cat dragon.txt
               shell: bash
             - name: Sleep for 300 seconds
+              timeout-minutes: 2
               run: |
                 sleep 300
               shell: bash
